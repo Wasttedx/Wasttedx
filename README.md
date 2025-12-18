@@ -25,7 +25,7 @@
 
 <br/>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Wasttedx&hide_border=true&background=0b0014&ring=9d4edd&fire=c77dff&currStreakLabel=c77dff&sideLabels=e0aaff&dates=9d4edd" height="150" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=Wasttedx&hide_border=true&background=0b0014&ring=9d4edd&fire=c77dff&currStreakLabel=c77dff&sideLabels=e0aaff&dates=9d4edd&currStreakNum=c77dff" height="150" />
 
 <br/>
 <br/>
