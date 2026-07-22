@@ -19,13 +19,13 @@ alt="Typing SVG"
 
 <img
 width="520"
-src="https://streak-stats.demolab.com?user=ArmanKianian&hide_border=true&background=00000000&ring=D4AF37&fire=D4AF37&currStreakLabel=D4AF37&currStreakNum=D4AF37&sideNums=D4AF37&sideLabels=D4AF37&dates=8B0000"
+src="https://streak-stats.demolab.com?user=ArmanKianian&hide_border=true&background=00000000&ring=D4AF37&fire=D4AF37&currStreakLabel=D4AF37&currStreakNum=D4AF37&sideNums=D4AF37&sideLabels=D4AF37&dates=A67C32"
 alt="GitHub Streak"
 />
 
 <img
 width="900"
-src="https://github-readme-activity-graph.vercel.app/graph?username=ArmanKianian&bg_color=00000000&color=D4AF37&line=A67C32&point=FFD700&area=true&area_color=5C0000&hide_border=true"
+src="https://github-readme-activity-graph.vercel.app/graph?username=ArmanKianian&bg_color=00000000&color=D4AF37&line=D4AF37&point=FFD700&area=true&area_color=D4AF37&hide_border=true"
 alt="GitHub Activity Graph"
 />
 
