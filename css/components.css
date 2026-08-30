@@ -1,0 +1,312 @@
+/* Skip Link */
+.skip-link {
+  padding: 1rem;
+  background-color: #FFD700;
+  color: #0A0A1E;
+  font-weight: 600;
+  z-index: 10000;
+}
+
+.skip-link:focus {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Portal Container */
+#portal-container {
+  display: flex;
+  flex-wrap: wrap;
+  transition: all 0.3s ease;
+  max-width: 100%;
+  padding: 3rem;
+  gap: 4rem;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+/* Portal Positioning Classes */
+.portal-position-center {
+  align-self: center;
+}
+
+.portal-position-left {
+  align-self: center;
+}
+
+.portal-position-right {
+  align-self: center;
+}
+
+.portal-position-top {
+  align-self: center;
+}
+
+.portal-position-bottom {
+  align-self: center;
+}
+
+/* Portal Buttons - Base */
+.portal-button {
+  position: relative;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(212, 175, 55, 0.25) !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+  border: 5px solid rgba(255, 215, 0, 1) !important;
+  border-radius: 50% !important;
+  transition: all 0.4s ease !important;
+  width: 180px !important;
+  height: 180px !important;
+  padding: 32px !important;
+  -webkit-tap-highlight-color: transparent;
+  opacity: 1 !important;
+  box-shadow: 0 0 50px rgba(212, 175, 55, 0.6), inset 0 0 30px rgba(212, 175, 55, 0.2) !important;
+  transform: none !important;
+}
+
+.portal-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.5), 0 0 80px rgba(212, 175, 55, 0.9), inset 0 0 50px rgba(212, 175, 55, 0.25);
+  border-color: rgba(255, 255, 255, 1);
+  transform: scale(1.05);
+  z-index: 1000;
+}
+
+.portal-button:focus::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 5px;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  animation: focus-pulse 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portal-button:focus::before {
+    animation: none;
+  }
+
+  .portal-button:hover {
+    transform: none;
+  }
+
+  .portal-button:focus-visible {
+    transform: none;
+  }
+}
+
+@keyframes focus-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portal-button {
+    transition: none;
+    opacity: 1;
+  }
+
+  .portal-button:focus::before {
+    animation: none;
+  }
+
+  .portal-button:hover {
+    transform: none;
+  }
+}
+
+/* Portal Hover Effects */
+.portal-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 80px rgba(212, 175, 55, 0.9), inset 0 0 50px rgba(212, 175, 55, 0.3);
+  border-color: rgba(255, 255, 255, 1);
+  background: rgba(212, 175, 55, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portal-button:hover {
+    transform: none;
+  }
+}
+
+/* Portal Press Effects */
+.portal-button:active {
+  transform: scale(0.96);
+}
+
+/* Overlay Layout for Different Positions */
+.portal-position-left::before,
+.portal-position-right::before,
+.portal-position-top::before,
+.portal-position-bottom::before {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 100px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+  z-index: -1;
+}
+
+.portal-position-left::before {
+  transform: rotate(-60deg);
+  left: -60px;
+  top: 50%;
+}
+
+.portal-position-right::before {
+  transform: rotate(120deg);
+  right: -60px;
+  top: 50%;
+}
+
+.portal-position-top::before {
+  left: 50%;
+  top: -60px;
+  transform: rotate(0deg);
+  margin-left: -50px;
+}
+
+.portal-position-bottom::before {
+  left: 50%;
+  bottom: -60px;
+  transform: rotate(180deg);
+  margin-left: -50px;
+}
+
+/* Portal Background Overlays */
+.portal-overlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.portal-overlay::before,
+.portal-overlay::after {
+  content: '';
+  position: absolute;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+}
+
+.portal-overlay::before {
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-duration: 15s;
+}
+
+.portal-overlay::after {
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-duration: 10s;
+  animation-direction: reverse;
+}
+
+/* Portal Overlay Position Variants for Hex Layout */
+
+/* Left position overlay */
+.portal-position-left .portal-overlay {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+/* Right position overlay */
+.portal-position-right .portal-overlay {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+/* Top position overlay */
+.portal-position-top .portal-overlay {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-180deg);
+}
+
+/* Bottom position overlay */
+.portal-position-bottom .portal-overlay {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-180deg);
+}
+
+/**/
+
+/* Portal Content */
+.portal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.875rem;
+  text-align: center;
+}
+
+.portal-icon {
+  font-size: 3.5rem;
+  line-height: 1;
+  transition: transform 0.3s ease;
+  text-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
+}
+
+.portal-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #FFD700;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+}
+
+.portal-description {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  opacity: 1;
+  line-height: 1.6;
+  color: #FFFFFF;
+  transition: opacity 0.3s ease;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+  max-width: 85%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portal-description {
+    transition: none;
+  }
+}

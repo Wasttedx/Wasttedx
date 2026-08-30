@@ -1,0 +1,177 @@
+/* Portal Animations */
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Entrance Animation */
+@keyframes portal-enter {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.7);
+    filter: blur(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Particle Animations */
+@keyframes float-up {
+  0%, 100% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: var(--particle-opacity, 0.4);
+  }
+  100% {
+    transform: translateY(-100vh) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes float-down {
+  0%, 100% {
+    transform: translateY(-100vh) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: var(--particle-opacity, 0.4);
+  }
+  100% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes float-left {
+  0%, 100% {
+    transform: translateX(100vw) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: var(--particle-opacity, 0.4);
+  }
+  100% {
+    transform: translateX(-100vw) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes float-right {
+  0%, 100% {
+    transform: translateX(-100vw) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: var(--particle-opacity, 0.4);
+  }
+  100% {
+    transform: translateX(100vw) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes float-circle {
+  0% {
+    transform: rotate(0deg) translateX(100vw) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: var(--particle-opacity, 0.4);
+  }
+  100% {
+    transform: rotate(360deg) translateX(-100vw) rotate(-360deg);
+    opacity: 0;
+  }
+}
+
+/* Applied via inline animation-delay from JS */
+
+/* Hover Animation - Simple Pulse */
+.portal-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+  border-color: rgba(212, 175, 55, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portal-button:hover {
+    transform: none;
+  }
+}
+
+/* Active State */
+.portal-button:active {
+  transform: scale(0.95);
+}
+
+/* Focus States */
+.portal-button:focus-visible {
+  animation: none;
+}
+
+/* Page Transition */
+@keyframes page-transition {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.page-transitioning {
+  animation: page-transition 0.3s ease-in forwards;
+}
+
+/* Button Rotation Animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-hover:hover .portal-icon {
+  animation: rotate 1s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rotate-hover {
+    animation: none;
+  }
+}
+
+/* Glow Pulse */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(212, 175, 55, 0.5);
+  }
+}
+
+.glow-hover:hover {
+  animation: glow-pulse 1s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-hover {
+    animation: none;
+  }
+}

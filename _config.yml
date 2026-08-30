@@ -1,0 +1,7 @@
+include:
+  - ".github"
+  - "assets"
+baseurl: ""
+url: "https://ArmanKianian.github.io"
+permalink: /:title.html
+relative_url: true

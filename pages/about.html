@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | ArmanKianian</title>
+  <base href="./">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: radial-gradient(circle at 50% 30%, rgba(10, 10, 46, 1) 0%, rgba(5, 5, 20, 1) 50%, rgba(0, 0, 0, 1) 100%);
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: rgba(212, 175, 55, 0.2);
+      border: 2px solid rgba(212, 175, 55, 0.5);
+      border-radius: 8px;
+      color: #FFD700;
+      font-family: 'Exo 2', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      margin-bottom: 3rem;
+      transition: all 0.3s ease;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .back-btn:hover {
+      background: rgba(212, 175, 55, 0.3);
+      border-color: rgba(255, 215, 0, 1);
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .content-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      padding: 3rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .page-title {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: #FFD700;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      text-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+    }
+
+    .page-subtitle {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 500;
+    }
+
+    .content-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .content-card:hover {
+      border-color: rgba(212, 175, 55, 0.4);
+    }
+
+    .content-card h2 {
+      font-size: 1.75rem;
+      color: #FFD700;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.1em;
+    }
+
+    .content-card p {
+      font-size: 1.125rem;
+      line-height: 1.9;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight {
+      color: #FFD700;
+      font-weight: 600;
+    }
+
+    .orb-background {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      animation: orb-pulse 20s ease-in-out infinite;
+    }
+
+    @keyframes orb-pulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+      50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.5; }
+    }
+  </style>
+</head>
+<body>
+  <div class="orb-background"></div>
+
+  <nav style="position: relative; z-index: 10; padding: 2rem;">
+    <a href="../index.html" class="back-btn">← Back to Portal</a>
+  </nav>
+
+  <main class="content-container">
+    <div class="page-header">
+      <h1 class="page-title">About Me</h1>
+      <p class="page-subtitle">Creating digital experiences that matter</p>
+    </div>
+
+    <div class="content-card">
+      <h2>Who I Am</h2>
+      <p>Welcome to <span class="highlight">my interactive corner of the web</span>. I'm a passionate developer who creates immersive digital experiences, games, and interactive tools.</p>
+      <p>This portal is designed to showcase my work and provide an engaging way to explore different aspects of my creative journey. Every destination inside represents a different facet of my digital universe.</p>
+    </div>
+
+    <div class="content-card">
+      <h2>What I Do</h2>
+      <p>I build <span class="highlight">interactive projects</span>, <span class="highlight">games</span>, <span class="highlight">tools</span>, and experiences using modern web technologies. My focus is on creating memorable, functional, and beautifully designed digital products.</p>
+    </div>
+
+    <div class="content-card">
+      <h2>Why This Portal?</h2>
+      <p>This isn't just a website—it's an <span class="highlight">interactive experience</span>. Navigating through each destination is part of the journey. The portal concept represents the interconnected nature of creativity and technology.</p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | ArmanKianian</title>
+  <base href="./">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: radial-gradient(circle at 30% 70%, rgba(10, 10, 46, 1) 0%, rgba(5, 5, 20, 1) 50%, rgba(0, 0, 0, 1) 100%);
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: rgba(212, 175, 55, 0.2);
+      border: 2px solid rgba(212, 175, 55, 0.5);
+      border-radius: 8px;
+      color: #FFD700;
+      font-family: 'Exo 2', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      margin-bottom: 3rem;
+      transition: all 0.3s ease;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .back-btn:hover {
+      background: rgba(212, 175, 55, 0.3);
+      border-color: rgba(255, 215, 0, 1);
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .content-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      padding: 3rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .page-title {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: #FFD700;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      text-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+    }
+
+    .page-subtitle {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 500;
+    }
+
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 20px;
+      padding: 2.5rem;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(212, 175, 55, 0.6);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FFD700, transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-title {
+      font-size: 1.75rem;
+      color: #FFD700;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .project-title .icon {
+      font-size: 2rem;
+    }
+
+    .project-desc {
+      font-size: 1.125rem;
+      line-height: 1.9;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 1.25rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .tag {
+      background: rgba(212, 175, 55, 0.15);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      color: #FFD700;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .orb-background {
+      position: fixed;
+      top: 20%;
+      right: 10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      animation: orb-float 15s ease-in-out infinite;
+    }
+
+    @keyframes orb-float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      50% { transform: translate(-30px, 20px) rotate(180deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="orb-background"></div>
+
+  <nav style="position: relative; z-index: 10; padding: 2rem;">
+    <a href="../index.html" class="back-btn">← Back to Portal</a>
+  </nav>
+
+  <main class="content-container">
+    <div class="page-header">
+      <h1 class="page-title">My Projects</h1>
+      <p class="page-subtitle">Projects that showcase my skills and creativity</p>
+    </div>
+
+    <div class="project-list">
+      <div class="project-card">
+        <h2 class="project-title">
+          <span class="icon">🎮</span>
+          Interactive Game Engine
+        </h2>
+        <p class="project-desc">
+          A custom game development engine built from scratch. Features real-time graphics, physics simulation, and a complete editor interface.
+        </p>
+        <div class="project-tags">
+          <span class="tag">HTML5 Canvas</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Game Design</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h2 class="project-title">
+          <span class="icon">🎨</span>
+          Digital Art Portfolio
+        </h2>
+        <p class="project-desc">
+          An immersive web experience for displaying digital artwork with 3D transforms, particle effects, and smooth transitions.
+        </p>
+        <div class="project-tags">
+          <span class="tag">WebGL</span>
+          <span class="tag">Three.js</span>
+          <span class="tag">Art</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h2 class="project-title">
+          <span class="icon">🛠️</span>
+          Developer Tools Suite
+        </h2>
+        <p class="project-desc">
+          Collection of utilities for developers including code snippets, text processors, and website optimization tools.
+        </p>
+        <div class="project-tags">
+          <span class="tag">JavaScript</span>
+          <span class="tag">UX Design</span>
+          <span class="tag">Utilities</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h2 class="project-title">
+          <span class="icon">📱</span>
+          Mobile-First Website
+        </h2>
+        <p class="project-desc">
+          A responsive website design created with performance and accessibility in mind. Optimized for all device sizes.
+        </p>
+        <div class="project-tags">
+          <span class="tag">CSS Grid</span>
+          <span class="tag">Responsive</span>
+          <span class="tag">Performance</span>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
